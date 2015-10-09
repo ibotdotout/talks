@@ -103,9 +103,16 @@ Test it All
 # How automate test look like ?
 
 ```python
+# AAA - Arrange Act Assert
+
 def test_score_81_get_A(self):
+  # Arrage
   score = 81
+
+  # ACT
   grade = cut_grade(score)
+
+  # Assert
   self.assertEqual(grade,'A')
 
 def test_score_70_get_B(self):
@@ -132,9 +139,10 @@ class: center, middle
 Code
 ```python
 # cut_grade
-x = int(input())
+                  # Act     -> failed
+x = int(input())  # Arrange -> failed
 if x >= 80:
-  print('A')
+  print('A')      # Assert  -> failed
 elif x >= 70:
   print('B')
 else:
@@ -146,15 +154,17 @@ Test
 How ?
 ```
 
+
+
 ---
 
 # Untestable Code (Cont.)
 
 Code
 ```python
-def cut_grade(score):
+def cut_grade(score): # Act -> passed, Arrange-> passed
   if score >= 80:
-    print('A')
+    print('A')        # Assert -> failed
   elif score >= 70:
     print('B')
   else:
@@ -178,9 +188,9 @@ def test_score_49_get_F(self):
 
 Code
 ```python
-def cut_grade(score):
+def cut_grade(score): # Act -> passed, Arrange-> passed
   if score >= 80:
-    return 'A'
+    return 'A'        # Assert -> passed
   elif score >= 70:
     return 'B'
   else:
@@ -199,6 +209,11 @@ def test_score_49_get_F(self):
   grade = cut_grade(score)
   self.assertEqual(grade,'F')
 ```
+
+---
+
+class: center, middle
+# Befefit & Pitfall of Testing
 
 ---
 
