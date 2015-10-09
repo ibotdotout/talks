@@ -213,7 +213,7 @@ def test_score_49_get_F(self):
 ---
 
 class: center, middle
-# Befefit & Pitfall of Testing
+# Befefit & Wrong Mindset of Testing
 
 ---
 
@@ -229,7 +229,7 @@ class: center, middle
 -- change to fix.
 
 ---
-# Pitfall of Testing
+# Wrong Mindset of Testing
 
 ## Make it work, (write) Test Later
 -- Technique debt. You pay what you play.
@@ -239,24 +239,59 @@ class: center, middle
 -- Try in small project then appiled in real-world project later.
 
 ---
-# Pitfall of TDD
-
-## Make your work slow
--- You can drive faster because of break.
-## Don't have to design
-
----
 class: center, middle
 # Test Driven = (Write) Test first
 
 ---
-# Why
+
+# TDD Life Cycle
+
+.right[![](https://leantesting.com/resources/wp-content/uploads/2015/02/tdd-circle-of-life.png)]
+
+1. Add testcase
+2. Look test fail
+3. Write Code
+4. Run tests
+5. Refactor
+
+---
+
+# TDD - Divide and Conquer
+
+Q: Calculate area under curve ?  
+A: Cut into small piece and calculate area than sum all area.
+Benefits
+
+.right[![](http://i.ytimg.com/vi/JbEbhv8ybmE/hqdefault.jpg)]
+
+- Small Task
+- Focus
+- Progress
+- No fear
+- Achievements
+
+---
+
+class: center, middle
+# Live Demo (Unittest)
+
+---
+
+class: center, middle
+# Test First vs Test Later
+Test -> Code or Code -> Test
+
+---
+
+# Why test first
+
 <iframe width="720" height="480"
 src="https://www.youtube.com/embed/dYim_QZqppY" frameborder="0"
 allowfullscreen></iframe>
 
 ---
-# Why test first
+
+# Why test first (Cont.)
 
 - ## Think What not How ?
 -- Think What it does, not how it implement.
@@ -266,7 +301,8 @@ allowfullscreen></iframe>
 -- Not every code that easy to test.
 
 ---
-# What wrong with test after ?
+
+# What wrong with test later?
 
 - ## Hard to test
 -- Your code not design to be testable.
@@ -276,31 +312,40 @@ allowfullscreen></iframe>
 -- You should write code to passed your test.
 
 ---
-
-# TDD Life Cycle
-
-- Add testcase
-- Look test fail
-- Write Code
-- Run tests
-- Refactor
-
----
-# TDD - Divide and Conquer
-
-Q: Canculate area under curve ?  
-A: Cut into small piece and calcuclate area than sum all area.
-Benefits
-
-- Small Task
-- Focus
-- Progress
-- No fear
-- Achievements
-
----
 class: center, middle
-# Live Demo (Unittest)
+# Wrong Mindset of TDD
+
+---
+
+# Wrong Minset of TDD
+## Make your work slow
+-- You can drive faster because of break.
+## Don't have to design
+
+---
+
+class: center, middle
+# How to start TDD
+
+---
+
+# Choose your weapon
+
+- Java - jUnit
+- Cpp - CppUnit
+- C#  - nUnit
+- PHP - PHPunit
+- Pyhon - unittest *
+- Ruby - Rspec *
+- Go - Testing *
+
+---
+
+# Pratices in TDD
+
+---
+
+# Testing/TDD in real-world project
 
 ---
 # Next ?
