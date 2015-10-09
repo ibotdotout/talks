@@ -1,9 +1,13 @@
+class: center, middle
+
 #TDD เปลี่ยนชีวิตคนคนนี้ยังไง
-###@barcampSK41
+###@barcampSK4
 
 ---
 
 # Me?
+
+.right[![](https://avatars0.githubusercontent.com/u/686676?v=3&s=460)]
 
 ```sh
 $ who
@@ -23,13 +27,14 @@ $ do
 #Problem
 
 
-## Debug is hell !!!
+- ## Debug is hell !!!
 
-## Testing to painful ?
+- ## Testing to painful ?
 
-## Dont know wrong on which version ?
+- ## Dont know wrong on which version ?
 
 ---
+class: center, middle
 
 # TDD =  Test Driven Developement
 ## Test + Driven
@@ -40,44 +45,92 @@ $ do
 Manual Testing
 
 ```sh
-$ python cut_grade.py> 81A> 70B> 49E> -1exit
+$ python cut_grade.py
+> 81
+A
+> 70
+B
+> 49
+E
+> -1
+exit
 ```
-This is only 3 cases.  How about 84 cases? Ten Times ?
+This is only 3 cases.
+--
 
-----
+##How about 84 cases? Ten Times ?
+
+---
 
 # Testing
 ## Automate Testng
 3 cases.
 ```sh
-$ nosetests tests/cut_grade_test.py -vtest_give_81_should_be_A ... passedtest_give_70_should_be_B ... passedtest_give_49_should_be_E ... passed---------------------------------------------3 tests run in 0.0 seconds (3 tests passed)
+$ nosetests tests/cut_grade_test.py -v
+test_give_81_should_be_A ... passed
+test_give_70_should_be_B ... passed
+test_give_49_should_be_E ... passed
+---------------------------------------------
+3 tests run in 0.0 seconds (3 tests passed)
 ```
+--
 84 cases.
 ```sh
-$ nosetests....................................................................................-----------------------------------------------------------------------------84 tests run in 0.0 seconds (84 tests passed)6 / 18How automate test look like ?
-def test_score_81_get_A(self):    score = 81    grade = cut_grade(score)    self.assertEqual(grade,'A')def test_score_70_get_B(self):    score = 70    grade = cut_grade(score)    self.assertEqual(grade,'B')def test_score_49_get_E(self):    score = 49    grade = cut_grade(score)    self.assertEqual(grade,'E')
+$nosetests
+................................................
+....................................
+-----------------------------------------------------------
+84 tests run in 0.0 seconds (84 tests passed)
+```
+---
+# How automate test look like ?
+
+```python
+def test_score_81_get_A(self):
+  score = 81
+  grade = cut_grade(score)
+  self.assertEqual(grade,'A')
+
+def test_score_70_get_B(self):
+  score = 70
+  grade = cut_grade(score)
+  self.assertEqual(grade,'B')
+
+def test_ score_49_get_E(self):
+  score = 49
+  grade = cut_grade(score)
+  self.assertEqual(grade,'E')
 ```
 
 ---
 
 # Benefit of Testing
 
-Know your software is working
---- code working
---- work on system / device / dependency version ?
-Know what wrong
+## Know your software is working
+-- code working
+-- work on system / device / dependency version ?
+## Know what wrong
 -- your code fail
 -- system not support
-Fast feedback
---- change to fix.
+## Fast feedback
+-- change to fix.
 
 ---
 # Pitfall of Testing
 
-Make it work, (write) Test Later
--- Technique debt.
-Small project don't write test !!!
--- Every code should have test. Testcase is your document.
+## Make it work, (write) Test Later
+-- Technique debt. You pay what you play.
+## Small project don't write test !!!
+-- Every code should have test.  
+-- Testcase is your document.  
+-- Try in small project then appiled in real-world project later.
+
+---
+# Pitfall of TDD
+
+## Make your work slow
+-- You can drive faster because of break.
+## Don't have to design
 
 ---
 # Test Driven = (Write) Test first
