@@ -46,9 +46,14 @@ class: center, middle
 # Life after TDD
 
 ---
+class: center, middle
 # Testing
-Manual Testing
+## Manual vs Automate
 
+---
+# Manual Testing
+
+There are only 3 grades: A, B, F
 ```sh
 $ python cut_grade.py
 > 81
@@ -56,37 +61,44 @@ A
 > 70
 B
 > 49
-E
-> -1
-exit
+F
 ```
-This is only 3 cases.
 --
-
-##How about 84 cases? Ten Times ?
+Improve to have 5 grades: A, B, C, D, F
+```sh
+$ python cut_grade.py
+> 60
+C
+> 55
+D
+```
+Test only task you work !!!
 
 ---
 
-# Testing
-## Automate Testng
-3 cases.
+# Automate Testing
+There are only 3 grade: A, B, F
 ```sh
 $ nosetests tests/cut_grade_test.py -v
 test_give_81_should_be_A ... passed
 test_give_70_should_be_B ... passed
-test_give_49_should_be_E ... passed
+test_give_49_should_be_F ... passed
 ---------------------------------------------
 3 tests run in 0.0 seconds (3 tests passed)
 ```
 --
-84 cases.
+Improve to have 5 grades: A, B, C, D, F
 ```sh
-$nosetests
-................................................
-....................................
------------------------------------------------------------
-84 tests run in 0.0 seconds (84 tests passed)
+$ nosetests tests/cut_grade_test.py -v
+test_give_81_should_be_A ... passed
+test_give_70_should_be_B ... passed
+test_give_60_should_be_C ... failed
+test_give_55_should_be_D ... passed
+test_give_49_should_be_F ... passed
+---------------------------------------------
+5 tests run in 0.0 seconds (4 tests passed)
 ```
+Test it All
 ---
 # How automate test look like ?
 
@@ -101,11 +113,17 @@ def test_score_70_get_B(self):
   grade = cut_grade(score)
   self.assertEqual(grade,'B')
 
-def test_ score_49_get_E(self):
+def test_score_49_get_F(self):
   score = 49
   grade = cut_grade(score)
-  self.assertEqual(grade,'E')
+  self.assertEqual(grade,'F')
 ```
+
+---
+
+class: center, middle
+# Testable Code
+### Not every code that testable
 
 ---
 
@@ -120,7 +138,7 @@ if x >= 80:
 elif x >= 70:
   print('B')
 else:
-  print('E')
+  print('F')
 ```
 
 Test
@@ -140,16 +158,16 @@ def cut_grade(score):
   elif score >= 70:
     print('B')
   else:
-    print('E')
+    print('F')
 
-if __name__ == __main__:
+if __name__ == '__main__':
   score = int(input())
   cut_grade(score)
 ```
 
 Test
 ```python
-def test_ score_49_get_E(self):
+def test_score_49_get_F(self):
   score = 49
   cut_grade(score)
   # output is on stdout how to check !!!
@@ -166,9 +184,9 @@ def cut_grade(score):
   elif score >= 70:
     return 'B'
   else:
-    return 'E'
+    return 'F'
 
-if __name__ == __main__:
+if __name__ == '__main__':
   score = int(input())
   grade = cut_grade(score)
   print(grade)
@@ -176,10 +194,10 @@ if __name__ == __main__:
 
 Testcase
 ```python
-def test_ score_49_get_E(self):
+def test_score_49_get_F(self):
   score = 49
   grade = cut_grade(score)
-  self.assertEqual(grade,'E')
+  self.assertEqual(grade,'F')
 ```
 
 ---
