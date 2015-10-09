@@ -14,7 +14,10 @@ $ who
 > Teerasak Kroputaponchai
 > http://dev.im-bot.com
 > https://github.com/ibotdotout
+```
+--
 
+```sh
 $ do
 > Python
 > Automate Testing
@@ -24,8 +27,13 @@ $ do
 ```
 
 ---
-#Problem
+class: center, middle
 
+# TDD =  Test Driven Developement
+## Test + Driven
+
+---
+# Life before TDD
 
 - ## Debug is hell !!!
 
@@ -34,13 +42,10 @@ $ do
 - ## Dont know wrong on which version ?
 
 ---
-class: center, middle
 
-# TDD =  Test Driven Developement
-## Test + Driven
+# Life after TDD
 
 ---
-
 # Testing
 Manual Testing
 
@@ -104,6 +109,81 @@ def test_ score_49_get_E(self):
 
 ---
 
+# Untestable Code
+
+Code
+```python
+# cut_grade
+x = int(input())
+if x >= 80:
+  print('A')
+elif x >= 70:
+  print('B')
+else:
+  print('E')
+```
+
+Test
+```python
+How ?
+```
+
+---
+
+# Untestable Code (Cont.)
+
+Code
+```python
+def cut_grade(score):
+  if score >= 80:
+    print('A')
+  elif score >= 70:
+    print('B')
+  else:
+    print('E')
+
+if __name__ == __main__:
+  score = int(input())
+  cut_grade(score)
+```
+
+Test
+```python
+def test_ score_49_get_E(self):
+  score = 49
+  cut_grade(score)
+  # output is on stdout how to check !!!
+```
+
+---
+# Testable Code
+
+Code
+```python
+def cut_grade(score):
+  if score >= 80:
+    return 'A'
+  elif score >= 70:
+    return 'B'
+  else:
+    return 'E'
+
+if __name__ == __main__:
+  score = int(input())
+  grade = cut_grade(score)
+  print(grade)
+```
+
+Testcase
+```python
+def test_ score_49_get_E(self):
+  score = 49
+  grade = cut_grade(score)
+  self.assertEqual(grade,'E')
+```
+
+---
+
 # Benefit of Testing
 
 ## Know your software is working
@@ -133,66 +213,70 @@ def test_ score_49_get_E(self):
 ## Don't have to design
 
 ---
+class: center, middle
 # Test Driven = (Write) Test first
 
 ---
 # Why
+<iframe width="720" height="480"
+src="https://www.youtube.com/embed/dYim_QZqppY" frameborder="0"
+allowfullscreen></iframe>
 
 ---
 # Why test first
 
-Think What not How ?
+- ## Think What not How ?
 -- Think What it does, not how it implement.
-Focus on your task and Prevent Over Design
+- ## Focus on your task and Prevent Over Design
 -- Do The Simplest Thing That Could Possibly Work #DTSTTCPW
-Make Testable Code.
+- ## Make Testable Code.
 -- Not every code that easy to test.
 
 ---
 # What wrong with test after ?
 
-Hard to test
+- ## Hard to test
 -- Your code not design to be testable.
-Your task done, why not rest ?
+- ## Your task done, why not rest ?
 -- Your never comeback to write test.
-Write test to passed your code. What !!!
+- ## Write test to passed your code. What !!!
 -- You should write code to passed your test.
 
 ---
 
 # TDD Life Cycle
 
-
-Add testcase
-Look test fail
-Write Code
-Run tests
-Refactor
+- Add testcase
+- Look test fail
+- Write Code
+- Run tests
+- Refactor
 
 ---
 # TDD - Divide and Conquer
 
-Q: Canculate area under curve ?A: Cut into small piece and calcuclate area than sum all area.
+Q: Canculate area under curve ?  
+A: Cut into small piece and calcuclate area than sum all area.
 Benefits
 
-Small Task
-Focus
-Progress
-No fear
-Achievements
+- Small Task
+- Focus
+- Progress
+- No fear
+- Achievements
 
 ---
-
+class: center, middle
 # Live Demo (Unittest)
 
 ---
 # Next ?
 
-Integration Testing
+- ## Integration Testing
 -- etc. Database
-UI Testing
+- ## UI Testing
 -- etc. Web, Mobile
-Automate Workflow
+- ## Automate Workflow
 -- Veriosn Control, Automate Code Review,  Continous Integration, Automate Deploy
 
 ---
