@@ -1,8 +1,32 @@
-<htm>
-<body>
-<h1> Talks </h1>
-<a href="/talks/barcampsk4/"> TDD เปลี่ยนชีวิตคนนี้ยังไง </a>
-<br>
-<a href="/talks/pumbaa-codefest-2014/"> Intro Vim </a>
-</body>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BotBotTalks</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      a {
+            color: #000000;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+  </head>
+  <body>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create({
+        sourceUrl: 'README.md'
+        });
+    </script>
+  </body>
 </html>
+
