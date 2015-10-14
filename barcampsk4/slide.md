@@ -106,24 +106,24 @@ Test it All
 # AAA - Arrange Act Assert
 
 def test_score_81_get_A(self):
-  # Arrage
+  # Arrange
   score = 81
 
   # ACT
   grade = cut_grade(score)
 
   # Assert
-  self.assertEqual(grade,'A')
+  self.assertEqual('A', grade)
 
 def test_score_70_get_B(self):
   score = 70
   grade = cut_grade(score)
-  self.assertEqual(grade,'B')
+  self.assertEqual('B', grade)
 
 def test_score_49_get_F(self):
   score = 49
   grade = cut_grade(score)
-  self.assertEqual(grade,'F')
+  self.assertEqual('F', grade)
 ```
 
 ---
@@ -207,7 +207,7 @@ Testcase
 def test_score_49_get_F(self):
   score = 49
   grade = cut_grade(score)
-  self.assertEqual(grade,'F')
+  self.assertEqual('F', grade)
 ```
 
 ---
@@ -343,21 +343,40 @@ class: center, middle
 
 # Pratices in TDD
 
+
 ---
 
 # Testing/TDD in real-world project
 
 ---
+
+class: center, middle
 # Next ?
 
+---
+- #Testing
 - ## Integration Testing
--- etc. Database
+-- etc. Database, Third party librairy
 - ## UI Testing
 -- etc. Web, Mobile
-- ## Automate Workflow
--- Veriosn Control, Automate Code Review,  Continous Integration, Automate Deploy
+
+---
+- #Automate Workflow
+-- Veriosn Control
+-- Automate Code Review
+-- Continous Integration
+-- Automate Deploy
+
+---
+
+class: center, middle
+# Demo
 
 ---
 # References:
-
-Tdd by http://www.somkiat.cc
+- [All About Testing by ibot.out]()
+- [Tdd by http://www.somkiat.cc](http://www.somkiat.cc/tag/tdd/)
+- [TDD ง่ายๆ สั้นๆ (Java)](https://www.youtube.com/watch?v=9OQeO64x-2k)
+- [Coding Dojo - TDD - Lesson 1 (Java)](https://www.youtube.com/watch?v=4UM73byPFlA)
+- [Understanding Test Driven Development](https://www.youtube.com/watch?v=q5Xd1tmIgec)
+- [“วิธีการเรียนรู้/การเริ่มต้นงาน”: Trick ง่ายๆ ที่หลายคนมองข้าม](http://www.rawitat.com/2014/10/01/1847/#more-1847)
