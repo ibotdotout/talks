@@ -375,9 +375,10 @@ class: center, middle
 ---
 # References:
 - [All About Testing by ibot.out]()
-- [Tdd by http://www.somkiat.cc](http://www.somkiat.cc/tag/tdd/)
+- [Tdd by somkiat.cc](http://www.somkiat.cc/tag/tdd/)
 - [Tdd by Sansarun Sukawongviwat @barcampsk#3](https://docs.google.com/presentation/d/1WvtMy0etIthiriuQngOLdSpzOyV-YRLwZA5cqEfKQEI/edit#slide=id.p)
 - [TDD ง่ายๆ สั้นๆ (Java)](https://www.youtube.com/watch?v=9OQeO64x-2k)
 - [Coding Dojo - TDD - Lesson 1 (Java)](https://www.youtube.com/watch?v=4UM73byPFlA)
 - [Understanding Test Driven Development](https://www.youtube.com/watch?v=q5Xd1tmIgec)
+- [automated-test by somkiat.cc](http://www.somkiat.cc/tag/automated-test/)
 - [“วิธีการเรียนรู้/การเริ่มต้นงาน”: Trick ง่ายๆ ที่หลายคนมองข้าม](http://www.rawitat.com/2014/10/01/1847/#more-1847)
