@@ -383,3 +383,4 @@ class: center, middle
 - [automated-test by somkiat.cc](http://www.somkiat.cc/tag/automated-test/)
 - [“วิธีการเรียนรู้/การเริ่มต้นงาน”: Trick ง่ายๆ ที่หลายคนมองข้าม](http://www.rawitat.com/2014/10/01/1847/#more-1847)
 - [Technical Debt มันคืออะไร ?](http://www.somkiat.cc/what-is-technical-debt/)
+- [ความเข้าใจผิดเรื่อง Unit Testing](http://www.somkiat.cc/misconception_unit_testing/)
