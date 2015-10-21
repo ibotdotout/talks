@@ -479,7 +479,7 @@ class: center, middle
 
 ---
 # References:
-- [All About Testing by ibot.out]()
+- [All About Testing by ibot.out](http://dev.im-bot.com/coding#tdd)
 - [Tdd by somkiat.cc](http://www.somkiat.cc/tag/tdd/)
 - [Tdd by Sansarun Sukawongviwat @barcampsk#3](https://docs.google.com/presentation/d/1WvtMy0etIthiriuQngOLdSpzOyV-YRLwZA5cqEfKQEI/edit#slide=id.p)
 - [TDD ง่ายๆ สั้นๆ (Java)](https://www.youtube.com/watch?v=9OQeO64x-2k)
@@ -489,3 +489,4 @@ class: center, middle
 - [“วิธีการเรียนรู้/การเริ่มต้นงาน”: Trick ง่ายๆ ที่หลายคนมองข้าม](http://www.rawitat.com/2014/10/01/1847/#more-1847)
 - [Technical Debt มันคืออะไร ?](http://www.somkiat.cc/what-is-technical-debt/)
 - [ความเข้าใจผิดเรื่อง Unit Testing](http://www.somkiat.cc/misconception_unit_testing/)
+- [Experiences with test driven development](http://macfeteria.com/2015/09/07/experiences-with-test-driven-development/)
