@@ -1,7 +1,13 @@
 class: center, middle
 
 #TDD เปลี่ยนชีวิตคนคนนี้ยังไง
-###@ibotdotout
+###barcampsk4 @tuber
+
+---
+class: center, middle
+
+# TDD =  Test Driven Developement
+## Test + Driven
 
 ---
 
@@ -11,49 +17,146 @@ class: center, middle
 
 ```sh
 $ who
-> Teerasak Kroputaponchai
-> http://dev.im-bot.com
+> ibot.out
+> http://fb.me/botblogblog
 > https://github.com/ibotdotout
 ```
 --
 
 ```sh
 $ do
+> Vim
+> Git
 > Python
-> Automate Testing
-> Automation Workflow
+> Automated Testing
+> Automated Workflow
 > Dev-ops
+> Docker
 > Agile / XP
 ```
+
+---
+
+class: center, middle
+# Life with/without TDD
+
+---
+# Life without TDD
+
+.right[![](http://joshowens.me/content/images/2015/Jul/debug-meme.jpg)]
+
+- Programming is boring
+
+- Testing is painful
+
+- Debug is hell !!!
+
+- Bug is features WTF !!!
+
+---
+
+# Life with TDD
+
+.right[![](http://www.rdegges.com/images/2012/program-all-the-things.png)]
+
+- Programming is fun
+
+- Testing, what is this ?
+
+- Debug is challenge !!!
+
+- Bug is friend !!!
 
 ---
 class: center, middle
 
 # TDD =  Test Driven Developement
-## Test + Driven
-
----
-# Life before TDD
-
-- ## Debug is hell !!!
-
-- ## Testing to painful ?
-
-- ## Dont know wrong on which version ?
+## Driven - (Design your) test frist
 
 ---
 
-# Life after TDD
+# Why (desing your) test first
+
+<iframe width="720" height="480"
+src="https://www.youtube.com/embed/dYim_QZqppY" frameborder="0"
+allowfullscreen></iframe>
 
 ---
+
 class: center, middle
-# Testing
-## Manual vs Automate
+
+# Give me cut_grade program !!!
+## what ? 80 get A , 70 get B, 49 get F
 
 ---
-# Manual Testing
+
+# What programmer do ?
+
+###Start with Coding
+```sh
+#!/usr/bin/env python3
+
+score = int(input())
+
+if score >= 80:
+    print('A')
+elif score >= 70:
+    print('B')
+elif score >= 60:
+    print('C')
+elif score >= 50:
+    print("D")
+else:
+    print("F")
+```
+
+---
+# Specfication of cut_grade
+
+.right[![](http://www.appliedi.net/wp-content/uploads/2012/01/checklist.jpg)]
+
+- score range 0 - 100
+- 80 <= score <= 100 get A
+- 50 <= score < 80   get B
+- 0 <= score < 50    get F
+
+--
+
+# Testcase
+
+- score 100 should get A
+- score 80 should get A
+- score 79 should get B
+- score 50 should get B
+- score 49 should get F
+- score 0 should get F
+
+---
+# Benefit of (design your ) test first
+
+- ## Think What not How ?
+-- Think what it does, not how it implement.
+- ## Focus on your task and Prevent Over Design
+-- Do The Simplest Thing That Could Possibly Work #DTSTTCPW
+
+---
+
+class: center, middle
+
+# TDD =  Test Driven Developement
+## Test - Automated (Unit) Testing
+
+---
+
+class: center, middle
+# Unit Testing
+## Manual vs Automated
+
+---
+# Manual Unittest
 
 There are only 3 grades: A, B, F
+
 ```sh
 $ python cut_grade.py
 > 81
@@ -65,6 +168,8 @@ F
 ```
 --
 Improve to have 5 grades: A, B, C, D, F
+
+--
 ```sh
 $ python cut_grade.py
 > 60
@@ -76,7 +181,7 @@ Test only task you work !!!
 
 ---
 
-# Automate Testing
+# Automated Unittest
 There are only 3 grade: A, B, F
 ```sh
 $ nosetests tests/cut_grade_test.py -v
@@ -125,12 +230,46 @@ def test_score_49_get_F(self):
   grade = cut_grade(score)
   self.assertEqual('F', grade)
 ```
+---
+# Test Effort
+- Blue - Manual,   Green - Automated
+- Add new test on 1, 5, 9
+.center[![](/img/effort_graph.png)]
+
+---
+
+class: center, middle
+# Befefit & Mis concept of Testing
+
+---
+
+# Benefit of Testing
+
+## Know your software is working
+-- code working  
+-- work on system / device / dependency version ?  
+## Know what wrong
+-- your code fail  
+-- system not support  
+## Fast feedback
+-- change to fix.  
+
+---
+# Misconcept of Testing
+
+## Make it work, (write) Test Later
+-- Technique debt. You pay what you play.
+## Small project don't write test !!!
+-- Every code should have test.  
+-- Testcase is your document.  
+-- Try in small project then appiled in real-world project later.
 
 ---
 
 class: center, middle
 # Testable Code
-### Not every code that testable
+### Not every code that automated testable
+
 
 ---
 
@@ -213,33 +352,6 @@ def test_score_49_get_F(self):
 ---
 
 class: center, middle
-# Befefit & Wrong Mindset of Testing
-
----
-
-# Benefit of Testing
-
-## Know your software is working
--- code working
--- work on system / device / dependency version ?
-## Know what wrong
--- your code fail
--- system not support
-## Fast feedback
--- change to fix.
-
----
-# Wrong Mindset of Testing
-
-## Make it work, (write) Test Later
--- Technique debt. You pay what you play.
-## Small project don't write test !!!
--- Every code should have test.  
--- Testcase is your document.  
--- Try in small project then appiled in real-world project later.
-
----
-class: center, middle
 # Test Driven = (Write) Test first
 
 ---
@@ -248,6 +360,7 @@ class: center, middle
 
 .right[![](https://leantesting.com/resources/wp-content/uploads/2015/02/tdd-circle-of-life.png)]
 
+- Design you test (Specfication)
 1. Add testcase
 2. Look test fail
 3. Write Code
@@ -283,14 +396,6 @@ Test -> Code or Code -> Test
 
 ---
 
-# Why test first
-
-<iframe width="720" height="480"
-src="https://www.youtube.com/embed/dYim_QZqppY" frameborder="0"
-allowfullscreen></iframe>
-
----
-
 # Why test first (Cont.)
 
 - ## Think What not How ?
@@ -313,11 +418,11 @@ allowfullscreen></iframe>
 
 ---
 class: center, middle
-# Wrong Mindset of TDD
+# Misconcept of TDD
 
 ---
 
-# Wrong Minset of TDD
+# Misconcept of TDD
 ## Make your work slow
 -- You can drive faster because of break.
 ## Don't have to design
