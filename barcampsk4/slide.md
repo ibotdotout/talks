@@ -147,6 +147,10 @@ class: center, middle
 ## Test - Automated (Unit) Testing
 
 ---
+# Testing Levels
+.center[![](img/testing_lv.png)]
+
+---
 
 class: center, middle
 # Unit Testing
@@ -234,32 +238,33 @@ def test_score_49_get_F(self):
 # Test Effort
 - Blue - Manual,   Green - Automated
 - Add new test on 1, 5, 9
-.center[![](/img/effort_graph.png)]
+.center[![](img/effort_graph.png)]
 
 ---
 
-class: center, middle
-# Befefit & Mis concept of Testing
+# Benefit of Automated Testing
 
----
-
-# Benefit of Testing
-
-## Know your software is working
--- code working  
+- ## Know your software is working
+-- code workin ?  
 -- work on system / device / dependency version ?  
-## Know what wrong
--- your code fail  
--- system not support  
-## Fast feedback
--- change to fix.  
+- ## Fast feedback
+-- easy to fix
+- ## Testcase as a document
+-- know input and expected output
 
 ---
-# Misconcept of Testing
 
-## Make it work, (write) Test Later
+# Disadvantages
+- ##Hard to Learn
+- ##May reduce productivity at the beginning
+
+---
+
+# Misconception of Automated Testing
+
+- ## Make it work, (write) Test Later
 -- Technique debt. You pay what you play.
-## Small project don't write test !!!
+- ## Small project don't write test !!!
 -- Every code should have test.  
 -- Testcase is your document.  
 -- Try in small project then appiled in real-world project later.
@@ -396,17 +401,6 @@ Test -> Code or Code -> Test
 
 ---
 
-# Why test first (Cont.)
-
-- ## Think What not How ?
--- Think What it does, not how it implement.
-- ## Focus on your task and Prevent Over Design
--- Do The Simplest Thing That Could Possibly Work #DTSTTCPW
-- ## Make Testable Code.
--- Not every code that easy to test.
-
----
-
 # What wrong with test later?
 
 - ## Hard to test
@@ -417,15 +411,27 @@ Test -> Code or Code -> Test
 -- You should write code to passed your test.
 
 ---
+
+# Why test first (Cont.)
+
+- ## Think What not How ?
+-- Think What it does, not how it implement.
+- ## Focus on your task and Prevent Over Design
+-- Do The Simplest Thing That Could Possibly Work #DTSTTCPW
+- ## Make Testable Code.
+-- Not every code that easy to test.
+
+---
 class: center, middle
-# Misconcept of TDD
+# Misconception of TDD
 
 ---
 
-# Misconcept of TDD
-## Make your work slow
+# Misconception of TDD
+- ## Make your work slow
 -- You can drive faster because of break.
-## Don't have to design
+- ## Don't have to design
+-- just draft design
 
 ---
 
@@ -443,15 +449,32 @@ class: center, middle
 - Pyhon - unittest *
 - Ruby - Rspec *
 - Go - Testing *
+- Javascirpt - Jasmine
 
 ---
 
-# Pratices in TDD
+# Practise in TDD
+
+- <https://www.hackerrank.com/challenges/simple-array-sum>
+
+Sample Input:
+```sh
+6
+1 2 3 4 10 11
+```
+Sample Output:
+
+```sh
+31
+```
+
+![](img/hrank_testcase.png)
 
 
 ---
-
+class: center, middle
 # Testing/TDD in real-world project
+## Demo
 
 ---
 
@@ -459,23 +482,22 @@ class: center, middle
 # Next ?
 
 ---
-- #Testing
+#Testing
+.right[![](img/testing_lv.png)]
 - ## Integration Testing
--- etc. Database, Third party librairy
+-- Database  
+-- party librairy  
 - ## UI Testing
--- etc. Web, Mobile
+-- Web  
+-- Mobile  
 
 ---
-- #Automate Workflow
--- Veriosn Control
--- Automate Code Review
--- Continous Integration
--- Automate Deploy
-
----
-
-class: center, middle
-# Demo
+#Automated Workflow
+![](img/badge.png)
+- ###Veriosn Control {Git}
+- ###Automated Code Review {SonarQube, Codacy.com}
+- ###Continous Integration {Jenkins, Drone.io, Travis-CI}
+- ###Automate Deploy
 
 ---
 # References:
