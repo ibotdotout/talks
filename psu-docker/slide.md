@@ -1,13 +1,7 @@
 class: center, middle
 
-#Docker
+# Docker - Why everyone talk about Docker ?
 ###@CoE PSU
-
----
-class: center, middle
-
-# Docker
-## Why everyone talk about Docker ?
 
 ---
 
@@ -39,14 +33,8 @@ $ do
 ---
 
 class: center, middle
-# Why everyone talk about Docker ?
-# What benefit of Docker
-
----
-
-class: center, middle
-# Who should know Docker
-## Ops, Web Dev, Mobile Dev
+# What is benefit of Docker ?
+## build once, run anywhere
 
 ---
 
@@ -54,18 +42,11 @@ class: center, middle
 # What is Docker ?
 ## Container is not lite weight VM
 
-
 ---
 
 class: center, middle
-# Docker with Researcher
-## Same config everywhere
-
----
-
-class: center, middle
-# Docker with Testing
-## easy change version
+# Docker Image vs Docker Containers
+## like Class and Instance in OOP
 
 ---
 
@@ -75,20 +56,117 @@ class: center, middle
 
 ---
 
+# [Docker Ecosystems](https://blog.codeship.com/understanding-the-docker-ecosystem/)
+- Docker Engine  
+- Docker Registry / Hub  
+- Docker Compose  
+- Docker Machine  
+- Docker Swarm  
+
+---
+
+class: center, middle
+# Docker with Development
+## Same config everywhere
+
+---
+
+class: center, middle
+# Docker with Testing
+## easy to change version
+
+---
+
+class: center, middle
+# First touch with Docker
+## Dockerfile and Docker Compose
+
+---
+
+# [Dockerfile](https://docs.docker.com/engine/reference/builder/) - [Best practices](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/)
+# Write Dockerfile
+
+---
+
+# [Docker Engine](https://docs.docker.com/engine/)
+
+---
+
+# [Docker Compose](https://docs.docker.com/compose/)
+
+- build / pull  
+- up / stop / restart / kill / rm  
+- run / exec  
+- ps / logs  
+
+---
+
+# [Docker Volume](https://docs.docker.com/engine/userguide/containers/dockervolumes/)
+## Manage data in containers
+
+---
+
+# [Docker Network](https://docs.docker.com/engine/userguide/networking/dockernetworks/)
+## Understand Docker container networks
+
+---
+
+# [Docker Compose File](https://docs.docker.com/compose/compose-file/)
+## Write docker-compose.yml
+
+---
+
+class: center, middle
+# First touch with Docker
+## Workshop and Demo
+
+---
+
 class: center, middle
 # Docker to the Cloud
 ## Docker Machine and Swarm
 
 ---
+
+# Docker Machine
+
+---
+
+# Docker Swarm
+
+---
+
+class: center, middle
+# Docker to the Cloud
+## Demo
+
+---
+
+class: center, middle
+# Docker and Microseriver
+## Monolithic vs Microservices Architecture
+
+---
+
+# [Monolithic Architecture](http://microservices.io/patterns/monolithic.html)
+
+---
+
+# [Microservices Architecture](http://microservices.io/patterns/monolithic.html)
+
+---
+
 # References:
-- [All About Testing by ibot.out](http://dev.im-bot.com/coding#tdd)
-- [Tdd by somkiat.cc](http://www.somkiat.cc/tag/tdd/)
-- [Tdd by Sansarun Sukawongviwat @barcampsk#3](https://docs.google.com/presentation/d/1WvtMy0etIthiriuQngOLdSpzOyV-YRLwZA5cqEfKQEI/edit#slide=id.p)
-- [TDD ง่ายๆ สั้นๆ (Java)](https://www.youtube.com/watch?v=9OQeO64x-2k)
-- [Coding Dojo - TDD - Lesson 1 (Java)](https://www.youtube.com/watch?v=4UM73byPFlA)
-- [Understanding Test Driven Development](https://www.youtube.com/watch?v=q5Xd1tmIgec)
-- [automated-test by somkiat.cc](http://www.somkiat.cc/tag/automated-test/)
-- [“วิธีการเรียนรู้/การเริ่มต้นงาน”: Trick ง่ายๆ ที่หลายคนมองข้าม](http://www.rawitat.com/2014/10/01/1847/#more-1847)
-- [Technical Debt มันคืออะไร ?](http://www.somkiat.cc/what-is-technical-debt/)
-- [ความเข้าใจผิดเรื่อง Unit Testing](http://www.somkiat.cc/misconception_unit_testing/)
-- [Experiences with test driven development](http://macfeteria.com/2015/09/07/experiences-with-test-driven-development/)
+
+### Overview about  Software Container / Docker Concept
+- [Containers and Future Generations of Clouds - Video Thai](http://www.thaiopenstack.org/conference2016/dr-chanwit-kaewkasi/)
+
+### Where to start ?
+- [Docker : ฉบับปูพื้น](http://www.jaynarol.com/what-is-docker/)
+- [Docker : ติดตั้งและเริ่มใช้งาน (อย่างเข้าใจ)](http://www.jaynarol.com/understand-docker/)
+- [dwyl/learn-docker](https://github.com/dwyl/learn-docker)
+- [Awesome-docker -  A curated list of Docker resources and projects](http://veggiemonk.github.io/awesome-docker/)
+- [Get Started with Docker](http://docker.com/tryit)
+- [Codemy School - Docker for Developers](https://www.youtube.com/playlist?list=PLjQo0sojbbxViGEbI_87SPXpb3neuVqDL)
+- [Docker Engine user guide](https://docs.docker.com/engine/userguide/)
+- [Docker Training >  Self-Paced Training](https://training.docker.com/self-paced-training)
