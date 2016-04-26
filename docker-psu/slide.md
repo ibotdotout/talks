@@ -117,6 +117,7 @@ class: center, middle
 # Simple Dockerfile
 
 ```sh
+# Dockerfile
 FROM debian:sid
 
 RUN apt-get install python
@@ -139,6 +140,7 @@ $ docker ps
 $ docker images
 
 $ docker built -t <image-name> .
+$ docker rmi  <image-name>
 
 $ docker run <image-name>
 $ docker run -d <image-name>
