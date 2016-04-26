@@ -38,9 +38,30 @@ class: center, middle
 
 ---
 
+# [What is benefit of Docker ?](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/7.0_Release_Notes/sect-Red_Hat_Enterprise_Linux-7.0_Release_Notes-Linux_Containers_with_Docker_Format-Advantages_of_Using_Docker.html)
+- Rapid application deployment
+
+- Portability across machines
+
+- Sharing
+
+- Simplified maintenance 
+
+---
+
 class: center, middle
 # What is Docker ?
 ## Container is not lite weight VM
+
+---
+
+# [What is Docker ?](https://www.docker.com/what-docker)
+
+![VM](/img/what-is-docker-diagram.png) < VM  ----  Container > ![Container](/img/what-is-vm-diagram.png)
+
+- a pieceof software in a complete filesystem that contains everything it needs to run: code, runtime, system tools,system libraries 
+
+- This guarantees that it will always run the same, regardless of the environment it is running in.
 
 ---
 
@@ -57,11 +78,20 @@ class: center, middle
 ---
 
 # [Docker Ecosystems](https://blog.codeship.com/understanding-the-docker-ecosystem/)
+
+.right[![](/img/docker-toolbox.png)]
+
 - Docker Engine  
+
 - Docker Registry / Hub  
+
 - Docker Compose  
+
 - Docker Machine  
+
 - Docker Swarm  
+
+- Docker Toolbox
 
 ---
 
@@ -84,11 +114,45 @@ class: center, middle
 ---
 
 # [Dockerfile](https://docs.docker.com/engine/reference/builder/) - [Best practices](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/)
-# Write Dockerfile
+# Simple Dockerfile
+
+```sh
+FROM debian:sid
+
+RUN apt-get install python
+
+WORKDIR /apps
+
+COPY hello.py /apps/hello.py
+
+CMD python hello.py
+```
 
 ---
 
 # [Docker Engine](https://docs.docker.com/engine/)
+
+Command
+
+```sh
+$ docker ps
+$ docker images
+
+$ docker built -t <image-name> .
+
+$ docker run <image-name>
+$ docker run -d <image-name>
+$ docker run -it --rm  <image-name> <command>
+
+$ docker exec -it <container-id> <command>
+
+$ docker log <container-id>
+$ docker inspect <container-id>
+$ docker rm <container-id>
+
+$ docker top <container-id>
+$ docker stats <container-id>
+```
 
 ---
 
