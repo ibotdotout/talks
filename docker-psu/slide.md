@@ -133,6 +133,7 @@ CMD python hello.py
 
 # [Docker Engine](https://docs.docker.com/engine/)
 
+.right[![](/img/Engine.png)]
 Command
 
 ```sh
@@ -160,6 +161,8 @@ $ docker stats <container-id>
 
 # [Docker Compose](https://docs.docker.com/compose/)
 
+.right[![](/img/Compose.png)]
+
 - build / pull  
 - up / stop / restart / kill / rm  
 - run / exec  
@@ -168,7 +171,9 @@ $ docker stats <container-id>
 ---
 
 # [Docker Volume](https://docs.docker.com/engine/userguide/containers/dockervolumes/)
-## Manage data in containers
+## [Manage data in containers](https://kvaes.wordpress.com/2016/02/11/docker-storage-patterns-for-persistence/)
+
+
 
 ---
 
@@ -194,11 +199,62 @@ class: center, middle
 
 ---
 
-# Docker Machine
+# [Docker Machine](https://www.docker.com/products/docker-machine)
+
+.right[![](/img/machine.png)]
+
+```sh
+# create on local
+$ docker-machine create -d virtualbox dev
+
+# create on cloud
+$ docker-machine create --driver digitalocean \
+	--digitalocean-access-token=secret \
+	--digitalocean-size 2gb \
+	--digitalocean-region sgp1 \
+	--digitalocean-image ubuntu-14-04-x64 \
+	docean
+
+# docker-machine command
+$ docker-machine start <machine-name>
+$ docker-machine stop <machine-name>
+$ docker-machine restart <machine-name>
+$ docker-machine kill <machine-name>
+$ docker-machine ssh <machine-name>
+$ docker-machine ip <machine-name>
+$ docker-machine env <machine-name>
+```
 
 ---
 
-# Docker Swarm
+
+# [Docker Swarm](https://www.docker.com/products/docker-swarm)
+
+.right[![](/img/dswarm.png)]
+Create Swarm by Docker-machine
+
+```sh
+# create swarm master
+$ docker-machine create \
+  -d virtualbox \
+  --swarm \
+  --swarm-master \
+  --swarm-discovery token:// \
+  swarm-master
+
+# create swarm slave
+$ docker-machine create \
+  -d virtualbox \
+  --swarm \
+  --swarm-discovery token:// \
+  swarm-node-00
+```
+
+---
+
+# [Docker Swarm](https://www.docker.com/products/docker-swarm)
+
+.center[![](/img/swarm.png)]
 
 ---
 
@@ -216,9 +272,13 @@ class: center, middle
 
 # [Monolithic Architecture](http://microservices.io/patterns/monolithic.html)
 
+.center[![](/img/monolithic.jpg)]
+
 ---
 
-# [Microservices Architecture](http://microservices.io/patterns/monolithic.html)
+# [Microservices Architecture](http://microservices.io/patterns/microservices.html)
+
+.center[![](/img/micro-service.jpg)]
 
 ---
 
@@ -236,3 +296,4 @@ class: center, middle
 - [Codemy School - Docker for Developers](https://www.youtube.com/playlist?list=PLjQo0sojbbxViGEbI_87SPXpb3neuVqDL)
 - [Docker Engine user guide](https://docs.docker.com/engine/userguide/)
 - [Docker Training >  Self-Paced Training](https://training.docker.com/self-paced-training)
+- [Get started with Docker Machine and a local VM](https://docs.docker.com/machine/get-started/)
