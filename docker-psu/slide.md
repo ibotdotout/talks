@@ -65,9 +65,92 @@ class: center, middle
 
 ---
 
-class: center, middle
+# Docker Concept - [Credit](http://heiber.im/post/creating-a-solid-docker-base-image/)
+
+.center[
+```
++--------+     +--------+    +--------+
+|C1      |     |C2      |    |C3      |
+| Nginx  +-----+ NodeJS +----+ Redis  |
+|        |     |        |    |        |
++--------+     +--------+    +--------+
+```     
+]
+
+The concept Docker was intended for originally:
+-  Isolated
+
+- Single-process
+
+- Easily distributable
+
+- Lean images
+
+---
+
 # Docker Image vs Docker Containers
 ## like Class and Instance in OOP
+
+.center[
+```
+3 Container from 1 Image
++--------+     +--------+    +--------+
+|C1      |     |C2      |    |C3      |
+| Nginx  |     |  Nginx |    | Nginx  |
+|        |     |        |    |        |
++--------+     +--------+    +--------+
+```     
+]
+
+---
+# Docker Only Linux ?
+
+* No, OSX and Window can run Docker.
+* [Docker for Mac and Windows Beta](https://blog.docker.com/2016/03/docker-for-mac-windows-beta/) , native are coming.
+* Now, using VM with Boot2Docker.
+
+.right[
+.left[
+```
+OSX / Windows
+
++-------------------------------------+
+|Host                                 |
+|                                     |
+|  +------------------------------+   |
+|  |Virtual Machine               |   |
+|  |                              |   |
+|  | +--------------------------+ |   |
+|  | |Docker Engine             | |   |
+|  | |                          | |   |
+|  | |  +--------+  +---------+ | |   |
+|  | |  |C1      |  |C2       | | |   |
+|  | |  |        |  |         | | |   |
+|  | |  +--------+  +---------+ | |   |
+|  | +--------------------------+ |   |
+|  +------------------------------+   |
+|                                     |
++-------------------------------------+
+```
+]
+]
+
+```
+Linux
+
++------------------------------+
+|Host                          |
+|                              |
+| +--------------------------+ |
+| |Docker Engine             | |
+| |                          | |
+| |  +--------+  +---------+ | |
+| |  |C1      |  |C2       | | |
+| |  |        |  |         | | |
+| |  +--------+  +---------+ | |
+| +--------------------------+ |
++------------------------------+
+```
 
 ---
 
@@ -114,12 +197,48 @@ class: center, middle
 ---
 
 # [Dockerfile](https://docs.docker.com/engine/reference/builder/) - [Best practices](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/)
-# Simple Dockerfile
+
+.right[
+.left[
+```
++-------------+
+|L4           |
+|   APP v1    |
++-------------+
+|L3           |
+|   PYTHON    |
++-------------+
+|L2           |
+|    CURL     |
++-------------+
+|L1           |
+|   Debian    |
++-------------+
+```
+
+```
++-------------+
+|L5           |
+|    APP v2   |
++-------------+
+|L3           |
+|   PYTHON    |
++-------------+
+|L2           |
+|    CURL     |
++-------------+
+|L1           |
+|   Debian    |
++-------------+
+```
+]
+]
 
 ```sh
 # Dockerfile
 FROM debian:sid
 
+RUN apt-get install curl
 RUN apt-get install python
 
 WORKDIR /apps
@@ -128,6 +247,21 @@ COPY hello.py /apps/hello.py
 
 CMD python hello.py
 ```
+
+```sh
+# Dockerfile
+FROM debian:sid
+
+RUN apt-get install curl
+RUN apt-get install python
+
+WORKDIR /apps
+
+COPY heyyo.py /apps/heyyo.py
+
+CMD python heyyo.py
+```
+
 
 ---
 
@@ -163,27 +297,222 @@ $ docker stats <container-id>
 
 .right[![](/img/Compose.png)]
 
-- build / pull  
-- up / stop / restart / kill / rm  
-- run / exec  
-- ps / logs  
+```sh
+$ docker-compose build
+$ docker-compose pull
+
+$ docker-compose up -d
+$ docker-compose -f production.yml up -d
+$ docker-compose stop
+$ docker-compose kill
+$ docker-compose restart
+$ docker-compose rm
+
+$ docker-compose run --rm -it <name> <command>
+$ docker-compose exec <name> <command>
+
+$ docker-compose ps
+$ docker-compose log -f
+```
 
 ---
 
-# [Docker Volume](https://docs.docker.com/engine/userguide/containers/dockervolumes/)
-## [Manage data in containers](https://kvaes.wordpress.com/2016/02/11/docker-storage-patterns-for-persistence/)
+# [Manage data in containers](https://kvaes.wordpress.com/2016/02/11/docker-storage-patterns-for-persistence/)
 
+```
+1. Normal, Data inside Contaier
++------------------+
+|C1                |
+|     MongoDB      |
+|                  |
+|  +------------+  |
+|  |    Data    |  |
+|  +------------+  |
++------------------+
+```
 
+.right[
+.left[
+```sh
+$ docker run -v .:/app node
+```
+]
+]
+
+```
+2. Mount to Host, using data from Host
++----------------------------+
+|Host                        |
+|    +------------------+    |
+|    |Docker Engine     |    |
+|    |   +----------+   |    |
+|    |   |C2        |   |    |
+|    |   |  MongoDB |   |    |
+|    |   |          |   |    |
+|    |   +----+-----+   |    |
+|    |        |         |    |
+|    +------------------+    |
+|             |              |
+|    +--------+---------+    |
+|    |      Data        |    |
+|    +------------------+    |
++----------------------------+
+```
+
+---
+
+# [Manage data in containers](https://kvaes.wordpress.com/2016/02/11/docker-storage-patterns-for-persistence/) - 2
+
+.right[
+.left[
+```sh
+$ docker create -v /dbdata \
+	--name dbstore busybox
+
+$ docker run -d \
+	--volumes-from dbstore \
+	training/postgres
+```
+]
+]
+
+```
+3. Data Container, use data from other Container
+ +---------------+
+ |C3             |
+ |               |  +-----------+
+ |               |  |C4         |
+ |    MongoDB    |__|    Data   |
+ |               |  |           |
+ |               |  +-----------+
+ +---------------+
+```
+
+.right[
+.left[
+```sh
+$ docker volume create \
+	--name my-named-volume
+
+$ docker volume ls
+
+$ docker volume inspect <volume>
+
+$ docker run -v \
+	my-named-volume:/opt/webapp \
+	training/webapp python app.py
+```
+]
+]
+
+```
+4. Docker Volume, using data from Docker Engine
++-------------------------+
+|Docker Engine            |
+|      +----------+       |
+|      |C5        |       |
+|      |  MongoDB |       |
+|      |          |       |
+|      +-----+----+       |
+|            |            |
+|   +--------+---------+  |
+|   |      Data        |  |
+|   +------------------+  |
++-------------------------+
+```
 
 ---
 
 # [Docker Network](https://docs.docker.com/engine/userguide/networking/dockernetworks/)
 ## Understand Docker container networks
 
+.right[
+.left[
+```sh
+$ docker run -p 3000:3000 node
+$ docker run node
+
+$ docker ps
+```
+]
+]
+
+```
++----------------------------------+
+|Host                              |
+|                                  |
+|  +----------------------------+  |
+|  |Docker Engine               |  |
+|  |   +--------+  +---------+  |  |
+|  |   |C1      |  |C2       |  |  |
+|  |   | NodeJS |  | NodeJS  |  |  |
+|  |   | P:3000 |  | P:3000  |  |  |
+|  |   +--------+  +---------+  |  |
+|  |    |P:28375    |P:28376    |  |
+|  +----------------------------+  |
+|       |                          |
+|       |P:3000                    |
+|       |                          |
++-------+--------------------------+
+```
+
+---
+# [Docker Network](https://docs.docker.com/engine/userguide/networking/dockernetworks/) - 2
+
+.right[
+.left[
+```sh
+$ docker network ls
+$ docker network inspect <network>
+```
+]
+]
+
+```
+Communication between Container
+
++--------------------------------------------+
+|Docker Engine                               |
+|                                            |
+| +--------------------------+               |
+| |Docker Network            |               |
+| |                          |               |
+| | +--------+  +---------+  |  +----------+ |
+| | |C1      |  |C2       |  |  |C3        | |
+| | | NodeJS +--+  Mongo  |  |  |  NodeJs  | |
+| | |        |  |         |  |  |          | |
+| | +--------+  +---------+  |  +----------+ |
+| |                          |               |
+| +--------------------------+               |
+|                                            |
++--------------------------------------------+
+```
 ---
 
 # [Docker Compose File](https://docs.docker.com/compose/compose-file/)
 ## Write docker-compose.yml
+
+```sh
+version: '2'
+
+services:
+  nginx:
+    image: nginx:stable-alpine
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - web
+    ports:
+      - "8080:80"
+
+  web:
+    build: .
+    depends_on:
+      - redis
+
+  redis:
+    image: redis
+```
 
 ---
 
@@ -297,3 +626,4 @@ class: center, middle
 - [Docker Engine user guide](https://docs.docker.com/engine/userguide/)
 - [Docker Training >  Self-Paced Training](https://training.docker.com/self-paced-training)
 - [Get started with Docker Machine and a local VM](https://docs.docker.com/machine/get-started/)
+- [Docker Volume](https://docs.docker.com/engine/userguide/containers/dockervolumes/)
