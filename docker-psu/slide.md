@@ -30,8 +30,8 @@ $ do
 > Agile / XP
 ```
 
----
 
+---
 class: center, middle
 # What is benefit of Docker ?
 ## build once, run anywhere
@@ -57,7 +57,7 @@ class: center, middle
 
 # [What is Docker ?](https://www.docker.com/what-docker)
 
-![VM](/img/what-is-docker-diagram.png) < VM  ----  Container > ![Container](/img/what-is-vm-diagram.png)
+![VM](img/what-is-docker-diagram.png) < VM  ----  Container > ![Container](img/what-is-vm-diagram.png)
 
 - a pieceof software in a complete filesystem that contains everything it needs to run: code, runtime, system tools,system libraries 
 
@@ -162,7 +162,7 @@ class: center, middle
 
 # [Docker Ecosystems](https://blog.codeship.com/understanding-the-docker-ecosystem/)
 
-.right[![](/img/docker-toolbox.png)]
+.right[![](img/docker-toolbox.png)]
 
 - Docker Engine  
 
@@ -267,7 +267,7 @@ CMD python heyyo.py
 
 # [Docker Engine](https://docs.docker.com/engine/)
 
-.right[![](/img/Engine.png)]
+.right[![](img/Engine.png)]
 Command
 
 ```sh
@@ -295,7 +295,7 @@ $ docker stats <container-id>
 
 # [Docker Compose](https://docs.docker.com/compose/)
 
-.right[![](/img/Compose.png)]
+.right[![](img/Compose.png)]
 
 ```sh
 $ docker-compose build
@@ -334,7 +334,7 @@ $ docker-compose log -f
 .right[
 .left[
 ```sh
-$ docker run -v .:/app node
+$ docker run -v $PWS:/app node
 ```
 ]
 ]
@@ -530,7 +530,7 @@ class: center, middle
 
 # [Docker Machine](https://www.docker.com/products/docker-machine)
 
-.right[![](/img/machine.png)]
+.right[![](img/machine.png)]
 
 ```sh
 # create on local
@@ -559,7 +559,7 @@ $ docker-machine env <machine-name>
 
 # [Docker Swarm](https://www.docker.com/products/docker-swarm)
 
-.right[![](/img/dswarm.png)]
+.right[![](img/dswarm.png)]
 Create Swarm by Docker-machine
 
 ```sh
@@ -583,7 +583,7 @@ $ docker-machine create \
 
 # [Docker Swarm](https://www.docker.com/products/docker-swarm)
 
-.center[![](/img/swarm.png)]
+.center[![](img/swarm.png)]
 
 ---
 
@@ -601,13 +601,13 @@ class: center, middle
 
 # [Monolithic Architecture](http://microservices.io/patterns/monolithic.html)
 
-.center[![](/img/monolithic.jpg)]
+.center[![](img/monolithic.jpg)]
 
 ---
 
 # [Microservices Architecture](http://microservices.io/patterns/microservices.html)
 
-.center[![](/img/micro-service.jpg)]
+.center[![](img/micro-service.jpg)]
 
 ---
 
