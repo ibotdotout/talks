@@ -615,17 +615,6 @@ class: center, middle
 
 ---
 
-class: center, middle
-# How to solve confilct
-
-- edit confilct < tools >
-- add confilct
-- commit merge/rebse
-
-- abort
-
----
-
 # Learn
 
 - [Code School - Git](https://www.codeschool.com/learn/git)
